@@ -1,0 +1,40 @@
+# run in conda environment "base":
+# C:/Users/xinkaihe/AppData/Local/xraylarch/Scripts/larix.exe
+Traceback (most recent call last):
+  File "C:\Users\xinkaihe\AppData\Local\xraylarch\Lib\site-packages\larch\wxxas\prepeak_panel.py", line 1571, in onFitModel
+    pkfit = self.larch_get("peakresult")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\xinkaihe\AppData\Local\xraylarch\Lib\site-packages\larch\wxxas\taskpanel.py", line 337, in larch_get
+    return self.controller.larch.symtable.get_symbol(sym)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\xinkaihe\AppData\Local\xraylarch\Lib\site-packages\larch\symboltable.py", line 422, in get_symbol
+    return self._lookup(sym, create=create)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\xinkaihe\AppData\Local\xraylarch\Lib\site-packages\larch\symboltable.py", line 365, in _lookup
+    raise NameError(f"'{name}' is not defined")
+NameError: 'peakresult' is not defined
+Traceback (most recent call last):
+  File "C:\Users\xinkaihe\AppData\Local\xraylarch\Lib\site-packages\larch\wxxas\xasgui.py", line 1023, in onSaveSession
+    save_session(fname=fname, _larch=self.larch._larch)
+  File "C:\Users\xinkaihe\AppData\Local\xraylarch\Lib\site-packages\larch\io\save_restore.py", line 172, in save_session
+    buff.append(json.dumps(encode4js(getattr(symtab, attr))))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\xinkaihe\AppData\Local\xraylarch\Lib\site-packages\larch\utils\jsonutils.py", line 158, in encode4js
+    out[encode4js(key)] = encode4js(val)
+                          ^^^^^^^^^^^^^^
+  File "C:\Users\xinkaihe\AppData\Local\xraylarch\Lib\site-packages\larch\utils\jsonutils.py", line 198, in encode4js
+    return {'__class__': 'Parameter', 'name': obj.name, 'state': obj.__getstate__()}
+                                                                 ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\xinkaihe\AppData\Local\xraylarch\Lib\site-packages\lmfit\parameter.py", line 892, in __getstate__
+    return (self.name, self.value, self._vary, self.expr, self.min,
+                       ^^^^^^^^^^
+  File "C:\Users\xinkaihe\AppData\Local\xraylarch\Lib\site-packages\lmfit\parameter.py", line 1007, in value
+    return self._getval()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\xinkaihe\AppData\Local\xraylarch\Lib\site-packages\lmfit\parameter.py", line 1001, in _getval
+    check_ast_errors(self._expr_eval)
+  File "C:\Users\xinkaihe\AppData\Local\xraylarch\Lib\site-packages\lmfit\parameter.py", line 27, in check_ast_errors
+    expr_eval.raise_exception(None)
+  File "C:\Users\xinkaihe\AppData\Local\xraylarch\Lib\site-packages\asteval\asteval.py", line 256, in raise_exception
+    raise exc(self.error_msg)
+ZeroDivisionError
